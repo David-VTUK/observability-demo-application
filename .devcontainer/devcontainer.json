@@ -1,0 +1,18 @@
+{
+	"name": "go-env",
+	"image": "mcr.microsoft.com/devcontainers/go:1.23", 
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"streetsidesoftware.code-spell-checker",
+				"redhat.vscode-yaml",
+				"golang.go"	
+			]
+		}
+	},
+    "workspaceFolder": "/workspace",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,Z"
+}
