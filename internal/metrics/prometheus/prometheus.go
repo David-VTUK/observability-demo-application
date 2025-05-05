@@ -83,8 +83,8 @@ func ChangeValues() {
 	}
 
 	for _, histogram := range histogramMetrics {
-		// Generate a random number between 0.0 and 2.0
-		randomNumber := rand.Float64()*1.9 + 0.0
+		// Generate a random number between 0.1 and 2.0
+		randomNumber := rand.Float64()*1.9 + 0.1
 
 		fmt.Println(randomNumber)
 
@@ -92,8 +92,8 @@ func ChangeValues() {
 	}
 
 	for _, summary := range summaryMetrics {
-		// Generate a random number between 0.0 and 2.0
-		randomNumber := rand.Float64()*1.9 + 0.0
+		// Generate a random number between 0.1 and 2.0
+		randomNumber := rand.Float64()*1.9 + 0.1
 
 		summary.Observe(randomNumber)
 	}
