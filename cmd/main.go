@@ -6,6 +6,7 @@ import (
 
 	"github.com/david-vtuk/observability-demo-application/internal/metrics/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	log "github.com/sirupsen/logrus"
 )
 
 func main() {
@@ -18,6 +19,7 @@ func main() {
 
 		for range ticker.C {
 			prometheus.ChangeValues()
+			log.Info("Metrics updated")
 		}
 	}()
 

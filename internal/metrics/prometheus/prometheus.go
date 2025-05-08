@@ -86,8 +86,6 @@ func ChangeValues() {
 		// Generate a random number between 0.1 and 2.0
 		randomNumber := rand.Float64()*1.9 + 0.1
 
-		fmt.Println(randomNumber)
-
 		histogram.Observe(randomNumber)
 	}
 
