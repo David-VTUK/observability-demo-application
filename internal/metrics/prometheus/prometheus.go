@@ -47,7 +47,7 @@ func Init() {
 			prometheus.HistogramOpts{
 				Name:    metricName,
 				Help:    fmt.Sprintf("An example histogram metric #%d", i),
-				Buckets: []float64{0.1, 0.2, 0.5, 1.0, 2.0},
+				Buckets: []float64{1.0, 2.0, 3.0, 4.0, 5.0},
 			},
 		)
 	}
@@ -69,30 +69,24 @@ func ChangeValues() {
 	for _, counter := range counterMetrics {
 
 		// Generate a random number between 1 and 50
-		randomNumber := rand.Intn(50) + 1
-
-		counter.Add(float64(randomNumber))
+		counter.Add(float64(rand.Intn(50) + 1))
 	}
 
 	for _, gauge := range gaugeMetrics {
 
 		// Generate a random number between 1 and 100
-		randomNumber := rand.Intn(100) + 1
-
-		gauge.Set(float64(randomNumber))
+		gauge.Set(float64(rand.Intn(100) + 1))
 	}
 
 	for _, histogram := range histogramMetrics {
-		// Generate a random number between 0.1 and 2.0
-		randomNumber := rand.Float64()*1.9 + 0.1
 
-		histogram.Observe(randomNumber)
+		// Generate a random number between 1.0 and 5.0
+		histogram.Observe(rand.Float64() * 5.0)
 	}
 
 	for _, summary := range summaryMetrics {
-		// Generate a random number between 0.1 and 2.0
-		randomNumber := rand.Float64()*1.9 + 0.1
 
-		summary.Observe(randomNumber)
+		// Generate a random number between 1.0 and 5.0
+		summary.Observe(rand.Float64() * 5.0)
 	}
 }
